@@ -27,7 +27,7 @@
     
     
     <script>
-        var url = 'JesseTest_Geo.json'
+        var url = 'https://mobraat.github.io/obser_map/2020-Jan6-GWFobservatoriesGeo.json'
 
         var mymap = L.map('mapid').setView([ 62.58332647, -114.4500116 ], 13);
 
@@ -54,7 +54,7 @@
                     layer.bindPopup(popupContent);
             };
 
-            //var gwfData = L.geoJSON(null, {onEachFeature: forEachFeature, style: style});
+            //var myData = L.geoJSON(null, {onEachFeature: forEachFeature, style: style});
             var myData = L.geoJson(null, {
                     onEachFeature: forEachFeature,
                     pointToLayer: function (geometry, coordinates){
