@@ -1,9 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "2020-Jan6-GWFobservatories",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "Site": "Baker Creek", "X": -114.4500116, "Y": 62.58332647, "Project_1": "Sub-Arctic Metal Mobility Study (PI: Brent Wolfe)", "Project_2": "", "Project_3": "", "Project_4": "", "URL": "https:\/\/gwf.usask.ca\/index.php", "#": "3" }, "geometry": { "type": "Point", "coordinates": [ -114.4500116, 62.58332647 ] } },
-{ "type": "Feature", "properties": { "Site": "Scotty Creek", "X": -121.3000002, "Y": 61.29999995, "Project_1": "Northern Water Futures (PI: Jennifer Baltzer)", "Project_2": "", "Project_3": "", "Project_4": "", "URL": "https:\/\/gwf.usask.ca\/index.php", "#": "13" }, "geometry": { "type": "Point", "coordinates": [ -121.3000002, 61.3 ] } }
-]
-}
