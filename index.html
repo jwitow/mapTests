@@ -1,81 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
      <!-- Make sure you put this AFTER Leaflet's CSS -->
-     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-  
- 
-
-    <style>
-    #mapid { position: absolute;
-            top:0;
-            right:0;
-            left:0;
-            bottom:0;}
-    </style>
-
-
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+ integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+ crossorigin=""></script>
+ <script src="script.js"></script>
+ <style>
+     #mapid { 
+         height: 180px; }
+ </style>
 </head>
 <body>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
-
     <div id="mapid"></div>
-   
-    
-    
-    <script>
-        var url = 'https://github.com/jwitow/mapTests/JesseTest_Geo.json'
 
-        var mymap = L.map('mapid').setView([ 62.58332647, -114.4500116 ], 13);
-
-     var layer =  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox/light-v9',
-            accessToken: 'pk.eyJ1IjoibW9yZ2FuYnJhYXRlbiIsImEiOiJjazVtc216M3cwcmthM29wY2s4NTdiMDZ6In0.jcbsx8PTyrpUTlusureNJg'
-            }).addTo(mymap);
-    
-            var geojsonMarker = {
-                'radius': 6,
-                'opacity': 0.5,
-                'color': "red"
-            };
-
-            
-            function forEachFeature(feature, layer) {
-                var popupContent = feature.properties.Site;
-
-                if (feature.properties && feature.properties.popupContent) {
-                    popupContent += feature,properties.popupContent;
-                }
-                    layer.bindPopup(popupContent);
-            };
-
-            //var gwfData = L.geoJSON(null, {onEachFeature: forEachFeature, style: style});
-            var gwfData = L.geoJson(null, {
-                    onEachFeature: forEachFeature,
-                    pointToLAyer: function (geometry, coordinates){
-                        return L.circleMarker (coordinates, geojsonMarker);
-                    }
-
-            });
-
-            //get GeoJson data and create features.
-            $.getJSON(url, function(data){
-                    gwfData.addData(data);
-            });
-
-            gwfData.addTo(mymap);
-
-
-
-
-    </script>
 
 </body>
 
